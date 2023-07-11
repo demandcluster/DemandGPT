@@ -20,16 +20,17 @@ export const NL_MASKS: BuiltinMask[] = [
     ],
     modelConfig: {
       model: "gpt-4",
-      temperature: 0.3,
+      temperature: 0.67,
       max_tokens: 2000,
       presence_penalty: 0,
-      frequency_penalty: 0,
+      frequency_penalty: 0.3,
       sendMemory: true,
-      historyMessageCount: 4,
-      compressMessageLengthThreshold: 1000,
+      historyMessageCount: 20,
+      compressMessageLengthThreshold: 5000,
     },
     lang: "nl",
     builtin: true,
     createdAt: 1688899480410,
+    hideContext:true
   },
 ];
