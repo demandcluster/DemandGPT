@@ -1,4 +1,4 @@
-import cn from "./cn";
+import nl from "./nl";
 import en from "./en";
 import tw from "./tw";
 import fr from "./fr";
@@ -20,7 +20,7 @@ import type { LocaleType } from "./cn";
 export type { LocaleType, PartialLocaleType } from "./cn";
 
 const ALL_LANGS = {
-  cn,
+  nl,
   en,
   tw,
   jp,
@@ -43,7 +43,7 @@ export type Lang = keyof typeof ALL_LANGS;
 export const AllLangs = Object.keys(ALL_LANGS) as Lang[];
 
 export const ALL_LANG_OPTIONS: Record<Lang, string> = {
-  cn: "简体中文",
+  nl: "Nederlands",
   en: "English",
   tw: "繁體中文",
   jp: "日本語",
@@ -62,7 +62,7 @@ export const ALL_LANG_OPTIONS: Record<Lang, string> = {
 };
 
 const LANG_KEY = "lang";
-const DEFAULT_LANG = "en";
+const DEFAULT_LANG = "nl";
 
 const fallbackLang = en;
 const targetLang = ALL_LANGS[getLang()] as LocaleType;
