@@ -255,7 +255,7 @@ const nl: LocaleType = {
   },
   Store: {
     DefaultTopic: "New Conversation",
-    BotHello: "Hello! How can I assist you today?",
+    BotHello: "Goedendag, hoe kan ik u helpen vandaag?",
     Error: "Something went wrong, please try again later.",
     Prompt: {
       History: (content: string) =>
