@@ -245,7 +245,7 @@ export const EN_MASKS: BuiltinMask[] = [
 
           You can, and it is recommended, to add as many descriptors needed for each one. You should include height in both metric as imperial under appearance (seperated by a slash).
           Be creative, don't come up with boring people. Reflect on the created character and tune it if it seems boring in any way. Do not forget any of the attributes: species,mind,personality,appearance,wear,personality,gender,sexuality,age,zodiac,job,country,likes,hates,description
-          For likes and hates, keep in mind that the AI that becomes the character has positivy bias. So under hates place the opposite of the likes.
+          For likes and hates, keep in mind that the AI that becomes the character has positivy bias. So under hates place the opposite of the likes. It is essential to not skip any of the attributes for brevity, there are plenty of tokens available (16K).
           `,
         date: "",
       },
@@ -316,7 +316,7 @@ export const EN_MASKS: BuiltinMask[] = [
     ],
     modelConfig: {
       model: "gpt-3.5-turbo-16k-0613",
-      temperature: 0.8,
+      temperature: 0.6,
       max_tokens: 16000,
       presence_penalty: 0.5,
       frequency_penalty: 0.5,
@@ -443,7 +443,7 @@ export const EN_MASKS: BuiltinMask[] = [
 
           You can, and it is recommended, to add as many descriptors needed for each one. You should include height in both metric as imperial under appearance (seperated by a slash).
           Be creative, don't come up with boring people. Reflect on the created character and tune it if it seems boring in any way. Do not forget any of the attributes: species,mind,personality,appearance,wear,personality,gender,sexuality,age,zodiac,job,country,likes,hates,description
-          For likes and hates, keep in mind that the AI that becomes the character has positivy bias. So under hates place the opposite of the likes.
+          For likes and hates, keep in mind that the AI that becomes the character has positivy bias. So under hates place the opposite of the likes. It is essential that you do not miss any of the attributes, no brevity. There are plenty of tokens available (16K)
           `,
         date: "",
       },
@@ -514,7 +514,7 @@ export const EN_MASKS: BuiltinMask[] = [
     ],
     modelConfig: {
       model: "gpt-3.5-turbo-16k-0613",
-      temperature: 0.8,
+      temperature: 0.6,
       max_tokens: 16000,
       presence_penalty: 0.5,
       frequency_penalty: 0.5,
