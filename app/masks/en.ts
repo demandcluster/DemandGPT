@@ -243,7 +243,8 @@ export const EN_MASKS: BuiltinMask[] = [
             ]
           }
 
-          You can, and it is recommended, to add as many descriptors needed for each one. You should include height in both metric as imperial under appearance.
+          You can, and it is recommended, to add as many descriptors needed for each one. You should include height in both metric as imperial under appearance (seperated by a slash).
+          Be creative, don't come up with boring people. Reflect on the created character and tune it if it seems boring in any way.
           `,
         date: "",
       },
@@ -305,22 +306,23 @@ export const EN_MASKS: BuiltinMask[] = [
       {
         id: "charluv-6",
         role: "assistant",
-        content: `Hi there, please tell me what kind of character/persona you need, I will fill in the blanks with my imagination!`,
+        content: `Hi there, are you ready to tell me what kind of character/persona you need, I will fill in the blanks with my imagination! I need some starting idea though before I can continue.`,
         date: "",
       },
     ],
     modelConfig: {
-      model: "gpt-4-32k",
+      model: "gpt-4",
       temperature: 0.8,
-      max_tokens: 30000,
-      presence_penalty: 0,
-      frequency_penalty: 0,
+      max_tokens: 8000,
+      presence_penalty: 0.5,
+      frequency_penalty: 0.5,
       sendMemory: true,
       historyMessageCount: 2,
-      compressMessageLengthThreshold: 30000,
+      compressMessageLengthThreshold: 7600,
     },
     lang: "en",
     builtin: true,
+    hideContext: true,
     createdAt: 1688899480413,
   },
 ];
