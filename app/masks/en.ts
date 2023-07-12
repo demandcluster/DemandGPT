@@ -140,8 +140,11 @@ export const EN_MASKS: BuiltinMask[] = [
         role: "system",
         content: `Act as a professional Charluv.com AI character generator. You will be creating a persona, an example chat/dialgoue, a few opening greetings a scenario and an image generation prompt. No brevity needed, you got 16k tokens available. Be complete.
            A charluv persona looks like this:
-
+          
           "attributes": {
+            "name": {
+              "Sasha"
+            },
             "species": [
               "human"
             ],
@@ -340,6 +343,9 @@ export const EN_MASKS: BuiltinMask[] = [
            A charluv persona looks like this:
 
           "attributes": {
+            "name": {
+              "Sasha"
+           },
             "species": [
               "human"
             ],
@@ -496,7 +502,7 @@ export const EN_MASKS: BuiltinMask[] = [
       {
         id: "charluv-4",
         role: "system",
-        content: `You know have a persona, example dialogue, opening greetings, scenario and a image generation prompt. Present it in a markdown formatted block. The model can handle 16k token size. Do not summarize or use brevity. Be complete.`,
+        content: `You know have a persona, example dialogue, opening greetings, scenario and an image generation prompt. Present it in a markdown formatted block. The model can handle 16k token size. Do not summarize or use brevity. Be complete.`,
         date: "",
       },
       {
