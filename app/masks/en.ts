@@ -336,7 +336,7 @@ export const EN_MASKS: BuiltinMask[] = [
       {
         id: "charluv-0",
         role: "system",
-        content: `Act as a professional Charluv.com AI character generator. You will be creating a persona, an example chat/dialgoue, a few opening greetings a scenario and an image generation prompt.
+        content: `Act as a professional Charluv.com AI character generator. You will be creating a persona, an example chat/dialgoue, a few opening greetings a scenario and an image generation prompt. You have 16k output available, no need for brevity.
            A charluv persona looks like this:
 
           "attributes": {
@@ -496,7 +496,7 @@ export const EN_MASKS: BuiltinMask[] = [
       {
         id: "charluv-4",
         role: "system",
-        content: `You know have a persona, example dialogue, opening greetings, scenario and a image generation prompt. Present it in a markdown formatted block`,
+        content: `You know have a persona, example dialogue, opening greetings, scenario and a image generation prompt. Present it in a markdown formatted block. The model can handle 16k token size. Do not summarize or use brevity. Be complete.`,
         date: "",
       },
       {
