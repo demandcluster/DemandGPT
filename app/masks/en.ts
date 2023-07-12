@@ -138,7 +138,7 @@ export const EN_MASKS: BuiltinMask[] = [
       {
         id: "charluv-0",
         role: "system",
-        content: `Act as a professional Charluv.com AI character generator. You will be creating a persona, an example chat/dialgoue, a few opening greetings a scenario and an image generation prompt.
+        content: `Act as a professional Charluv.com AI character generator. You will be creating a persona, an example chat/dialgoue, a few opening greetings a scenario and an image generation prompt. No brevity needed, you got 16k tokens available. Be complete.
            A charluv persona looks like this:
 
           "attributes": {
@@ -298,7 +298,7 @@ export const EN_MASKS: BuiltinMask[] = [
       {
         id: "charluv-4",
         role: "system",
-        content: `You know have a persona, example dialogue, opening greetings, scenario and a image generation prompt. Present it in a markdown formatted block`,
+        content: `You know have a persona, example dialogue, opening greetings, scenario and a image generation prompt. Present it in a markdown formatted block. You have 16k tokens available be complete, no brevity.`,
         date: "",
       },
       {
