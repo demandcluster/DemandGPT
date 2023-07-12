@@ -246,7 +246,7 @@ export const EN_MASKS: BuiltinMask[] = [
             ]
           }
 
-          You can, and it is recommended, to add as many descriptors needed for each one. You should include height in both metric as imperial under appearance (seperated by a slash).
+          You can, and it is recommended, to add as many descriptors needed for each one. You should include height in both metric as imperial under appearance (seperated by a slash). Description should be 300 tokens max.
           Be creative, don't come up with boring people. Reflect on the created character and tune it if it seems boring in any way. Do not forget any of the attributes: species,mind,personality,appearance,wear,personality,gender,sexuality,age,zodiac,job,country,likes,hates,description
           For likes and hates, keep in mind that the AI that becomes the character has positivy bias. So under hates place the opposite of the likes. It is essential to not skip any of the attributes for brevity, there are plenty of tokens available (16K).
           `,
@@ -285,7 +285,7 @@ export const EN_MASKS: BuiltinMask[] = [
       {
         id: "charluv-2.5",
         role: "system",
-        content: `Create a starting scenario, remember that both {{user}} and {{char}} have just met.
+        content: `Create a starting scenario, remember that both {{user}} and {{char}} have just met. The scenario should be online.
         Example:
         {{char}} is in her bedroom waiting for clients to join her, she is going to be very descriptive about what she does and she is in an arousing mood. She just received a massive payment of {{user}} and she is ready to show {{user}} that he did not waste his money.
         `,
@@ -447,7 +447,7 @@ export const EN_MASKS: BuiltinMask[] = [
             ]
           }
 
-          You can, and it is recommended, to add as many descriptors needed for each one. You should include height in both metric as imperial under appearance (seperated by a slash).
+          You can, and it is recommended, to add as many descriptors needed for each one. You should include height in both metric as imperial under appearance (seperated by a slash). Description should be 300 tokens max.
           Be creative, don't come up with boring people. Reflect on the created character and tune it if it seems boring in any way. Do not forget any of the attributes: species,mind,personality,appearance,wear,personality,gender,sexuality,age,zodiac,job,country,likes,hates,description
           For likes and hates, keep in mind that the AI that becomes the character has positivy bias. So under hates place the opposite of the likes. It is essential that you do not miss any of the attributes, no brevity. There are plenty of tokens available (16K)
           `,
@@ -486,7 +486,7 @@ export const EN_MASKS: BuiltinMask[] = [
       {
         id: "charluv-2.5",
         role: "system",
-        content: `Create a starting scenario, remember that both {{user}} and {{char}} have just met.
+        content: `Create a starting scenario, remember that both {{user}} and {{char}} have just met. The scenario should be online.
         Example:
         {{char}} is in her bedroom waiting for clients to join her, she is going to be very descriptive about what she does and she is in an arousing mood. She just received a massive payment of {{user}} and she is ready to show {{user}} that he did not waste his money.
         `,
