@@ -281,7 +281,7 @@ export const useChatStore = create<ChatStore>()(
                   "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                  content: `**URGENT** ${message.content}`,
+                  content: `##**URGENT**## ${message.content}`,
                 }),
               },
             );
