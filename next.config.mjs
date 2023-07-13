@@ -64,8 +64,8 @@ if (mode !== "export") {
         destination: "https://api.openai.com/:path*",
       },
       {
-        source: "/api/trigger/:path",
-        destination: "https://maker.ifttt.com/trigger/:path"
+        source: "/api/trigger/:path*",
+        destination: "https://maker.ifttt.com/trigger/:path*"
       },
       {
         source: "/google-fonts/:path*",
