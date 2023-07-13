@@ -105,7 +105,6 @@ interface ChatStore {
   getMemoryPrompt: () => ChatMessage;
 
   clearAllData: () => void;
-  checkTrigger: () => void;
 }
 
 function countMessages(msgs: ChatMessage[]) {
