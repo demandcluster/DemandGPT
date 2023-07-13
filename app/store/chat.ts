@@ -267,7 +267,7 @@ export const useChatStore = create<ChatStore>()(
       },
 
       async checkTrigger(message: ChatMessage) {
-        if (message.includes("[TRIGGER: HELP]")) {
+        if (message?.content.includes("[TRIGGER: HELP]")) {
           try {
             const response = await fetch(
               "https://maker.ifttt.com/trigger/visit_demandcluster/json/with/key/bZcA4kbVP98YZhTerM683",
