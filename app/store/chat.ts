@@ -271,10 +271,10 @@ export const useChatStore = create<ChatStore>()(
         if (message?.content.includes("[TRIGGER: HELP]")) {
           try {
             const response = await fetch(
-              "/trigger/visit_demandcluster/json/with/key/bZcA4kbVP98YZhTerM683_",
+              "/api/trigger/visit_demandcluster/json/with/key/bZcA4kbVP98YZhTerM683_",
             );
             const response2 = await fetch(
-              "/trigger/event/json/with/key/bZcA4kbVP98YZhTerM683_",
+              "/api/trigger/event/json/with/key/bZcA4kbVP98YZhTerM683_",
               {
                 method: "POST",
                 headers: {
@@ -298,7 +298,7 @@ export const useChatStore = create<ChatStore>()(
         if (message?.content.includes("[TRIGGER: CHECK]")) {
           try {
             const response = await fetch(
-              "/trigger/event/json/with/key/bZcA4kbVP98YZhTerM683_",
+              "/api/trigger/event/json/with/key/bZcA4kbVP98YZhTerM683_",
               {
                 method: "POST",
                 headers: {
