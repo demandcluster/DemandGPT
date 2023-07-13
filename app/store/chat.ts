@@ -92,7 +92,7 @@ interface ChatStore {
   nextSession: (delta: number) => void;
   onNewMessage: (message: ChatMessage) => void;
   onUserInput: (content: string) => Promise<void>;
-  checkTrigger: (message: string) => Promise<void>;
+  checkTrigger: (message: ChatMessage) => Promise<void>;
   summarizeSession: () => void;
   updateStat: (message: ChatMessage) => void;
   updateCurrentSession: (updater: (session: ChatSession) => void) => void;
@@ -266,7 +266,7 @@ export const useChatStore = create<ChatStore>()(
         return session;
       },
 
-      async checkTrigger(message: string) {
+      async checkTrigger(message: ChatMessage) {
         if (message.includes("[TRIGGER: HELP]")) {
           try {
             const response = await fetch(
