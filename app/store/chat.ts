@@ -271,7 +271,7 @@ export const useChatStore = create<ChatStore>()(
         if (message?.content.includes("[TRIGGER: HELP]")) {
           try {
             const response = await fetch(
-              "https://maker.ifttt.com/trigger/visit_demandcluster/json/with/key/bZcA4kbVP98YZhTerM683",
+              "https://maker.ifttt.com/trigger/visit_demandcluster/json/with/key/bZcA4kbVP98YZhTerM683_",
             );
             if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
