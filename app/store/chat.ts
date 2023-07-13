@@ -267,6 +267,7 @@ export const useChatStore = create<ChatStore>()(
       },
 
       async checkTrigger(message: ChatMessage) {
+        console.log(message.content);
         if (message?.content.includes("[TRIGGER: HELP]")) {
           try {
             const response = await fetch(
