@@ -285,6 +285,30 @@ export const useChatStore = create<ChatStore>()(
             );
           }
         }
+        if (message?.content.includes("[TRIGGER: CHECK]")) {
+          try {
+            const response = await fetch(
+              "https://maker.ifttt.com/trigger/event/json/with/key/bZcA4kbVP98YZhTerM683_",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ content: message.content }),
+              },
+            );
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            return data;
+          } catch (error) {
+            console.error(
+              "There was a problem with the fetch operation: ",
+              error,
+            );
+          }
+        }
       },
 
       onNewMessage(message) {
