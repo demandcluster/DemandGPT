@@ -64,6 +64,10 @@ if (mode !== "export") {
         destination: "https://api.openai.com/:path*",
       },
       {
+        source: "/trigger/:path",
+        destination: "https://maker.ifttt.com/trigger/:path"
+      },
+      {
         source: "/google-fonts/:path*",
         destination: "https://fonts.googleapis.com/:path*",
       },
@@ -71,6 +75,7 @@ if (mode !== "export") {
         source: "/sharegpt",
         destination: "https://sharegpt.com/api/conversations",
       },
+
     ];
 
     const apiUrl = process.env.API_URL;
