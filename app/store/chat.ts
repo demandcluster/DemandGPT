@@ -265,7 +265,7 @@ export const useChatStore = create<ChatStore>()(
         return session;
       },
 
-      async checkTrigger(message) {
+      async checkTrigger(message: string) {
         if (message.includes("[TRIGGER: HELP]")) {
           try {
             const response = await fetch(
