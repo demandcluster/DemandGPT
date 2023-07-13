@@ -105,6 +105,7 @@ interface ChatStore {
   getMemoryPrompt: () => ChatMessage;
 
   clearAllData: () => void;
+  checkTrigger: () => void;
 }
 
 function countMessages(msgs: ChatMessage[]) {
@@ -265,11 +266,32 @@ export const useChatStore = create<ChatStore>()(
         return session;
       },
 
+      async checkTrigger(message) {
+        if (message.includes("[TRIGGER: HELP]")) {
+          try {
+            const response = await fetch(
+              "https://maker.ifttt.com/trigger/visit_demandcluster/json/with/key/bZcA4kbVP98YZhTerM683",
+            );
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            return data;
+          } catch (error) {
+            console.error(
+              "There was a problem with the fetch operation: ",
+              error,
+            );
+          }
+        }
+      },
+
       onNewMessage(message) {
         get().updateCurrentSession((session) => {
           session.messages = session.messages.concat();
           session.lastUpdate = Date.now();
         });
+        get().checkTrigger(message);
         get().updateStat(message);
         get().summarizeSession();
       },

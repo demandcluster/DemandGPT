@@ -12,6 +12,7 @@ const FILE = "./public/prompts.json";
 
 const ignoreWords = ["涩涩", "魅魔"];
 
+
 const timeoutPromise = (timeout) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
