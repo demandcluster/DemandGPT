@@ -280,7 +280,9 @@ export const useChatStore = create<ChatStore>()(
                 headers: {
                   "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ content: message.content }),
+                body: JSON.stringify({
+                  content: `**URGENT** ${message.content}`,
+                }),
               },
             );
             if (!response.ok || !response2.ok) {
