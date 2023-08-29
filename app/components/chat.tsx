@@ -27,8 +27,6 @@ import PinIcon from "../icons/pin.svg";
 import EditIcon from "../icons/rename.svg";
 import ConfirmIcon from "../icons/confirm.svg";
 import CancelIcon from "../icons/cancel.svg";
-import OnlineIcon from "../icons/online.svg";
-import OfflineIcon from "../icons/offline.svg";
 
 import LightIcon from "../icons/light.svg";
 import DarkIcon from "../icons/dark.svg";
@@ -534,13 +532,6 @@ export function ChatActions(props: {
           }}
         />
       )}
-      <ChatAction
-        onClick={() => {
-          chatStore.updateWebSearchStat();
-        }}
-        text={Locale.Chat.InputActions.Internet}
-        icon={chatStore.webSearch ? <OnlineIcon /> : <OfflineIcon />}
-      />
     </div>
   );
 }
@@ -611,10 +602,7 @@ function _Chat() {
   type RenderMessage = ChatMessage & { preview?: boolean };
 
   const chatStore = useChatStore();
-  const [session, webSearch] = useChatStore((state) => [
-    state.currentSession(),
-    state.webSearch,
-  ]);
+  const session = chatStore.currentSession();
   const config = useAppConfig();
   const fontSize = config.fontSize;
 
@@ -695,7 +683,7 @@ function _Chat() {
     }
   };
 
-  const doSubmit = async (userInput: string) => {
+  const doSubmit = (userInput: string) => {
     if (userInput.trim() === "") return;
     const matchCommand = chatCommands.match(userInput);
     if (matchCommand.matched) {
@@ -705,10 +693,7 @@ function _Chat() {
       return;
     }
     setIsLoading(true);
-    const webresults = await chatStore.onWebsearch(userInput);
-    chatStore
-      .onUserInput(webSearch ? `${webresults}:${userInput}` : userInput)
-      .then(() => setIsLoading(false));
+    chatStore.onUserInput(userInput).then(() => setIsLoading(false));
     localStorage.setItem(LAST_INPUT_KEY, userInput);
     setUserInput("");
     setPromptHints([]);

@@ -84,14 +84,6 @@ if (mode !== "export") {
         destination: `${apiUrl}/:path*`,
       });
     }
-    const searxURL = process.env.SearxURL;
-    if (searxURL) {
-      console.log("[Next] using searx url ", searxURL);
-      ret.push({
-        source: "/api/searx/:path*",
-        destination: `${searxURL}/:path*`,
-      });
-    }
 
     return {
       beforeFiles: ret,
