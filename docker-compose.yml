@@ -1,38 +1,30 @@
-version: "3.9"
+version: '3.9'
 services:
-  chatgpt-next-web:
-    profiles: [ "no-proxy" ]
-    container_name: chatgpt-next-web
-    image: yidadaa/chatgpt-next-web
-    ports:
-      - 3000:3000
+  qwen32b:
+    image: ganxing/v0.3.3_modelscope
+    command: --model Qwen/Qwen1.5-32B-Chat-AWQ --tokenizer Qwen/Qwen1.5-32B-Chat --max-model-len 2200 --enforce-eager --gpu-memory-utilization 0.99 --served-model gpt-3.5-turbo
     environment:
-      - OPENAI_API_KEY=$OPENAI_API_KEY
-      - GOOGLE_API_KEY=$GOOGLE_API_KEY
-      - CODE=$CODE
-      - BASE_URL=$BASE_URL
-      - OPENAI_ORG_ID=$OPENAI_ORG_ID
-      - HIDE_USER_API_KEY=$HIDE_USER_API_KEY
-      - DISABLE_GPT4=$DISABLE_GPT4
-      - ENABLE_BALANCE_QUERY=$ENABLE_BALANCE_QUERY
-      - DISABLE_FAST_LINK=$DISABLE_FAST_LINK
-      - OPENAI_SB=$OPENAI_SB
+      - VLLM_USE_MODELSCOPE=True
+    volumes:
+      - /home/nobody/.cache/modelscope:/root/.cache/modelscope
+    ports:
+      - 8000:8000
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - capabilities: ['gpu']
 
-  chatgpt-next-web-proxy:
-    profiles: [ "proxy" ]
-    container_name: chatgpt-next-web-proxy
+  chatgpt-next-web:
     image: yidadaa/chatgpt-next-web
+    container_name: chatgpt-next-web
     ports:
       - 3000:3000
     environment:
-      - OPENAI_API_KEY=$OPENAI_API_KEY
-      - GOOGLE_API_KEY=$GOOGLE_API_KEY
-      - CODE=$CODE
-      - PROXY_URL=$PROXY_URL
-      - BASE_URL=$BASE_URL
-      - OPENAI_ORG_ID=$OPENAI_ORG_ID
-      - HIDE_USER_API_KEY=$HIDE_USER_API_KEY
-      - DISABLE_GPT4=$DISABLE_GPT4
-      - ENABLE_BALANCE_QUERY=$ENABLE_BALANCE_QUERY
-      - DISABLE_FAST_LINK=$DISABLE_FAST_LINK
-      - OPENAI_SB=$OPENAI_SB
+      - BASE_URL=http://qwen32b:8000
+    depends_on:
+      - qwen32b
+
+networks:
+  default:
+    driver: bridge
